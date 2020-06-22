@@ -1,1 +1,12 @@
 .Side-bar
+  .Side-bar__user-name
+    .Side-bar__top-items
+      .Side-bar__top-items--name
+        masa
+      .Side-bar__top-items--icon
+        = link_to "#", class: "Side-bar__top-items--edit" do
+          = icon('far', 'edit')
+        = link_to "#", class: "Side-bar__top-items--cog" do
+          = icon('fas', 'cog')
+  .Side-bar__group-list
+    サイドグループリスト

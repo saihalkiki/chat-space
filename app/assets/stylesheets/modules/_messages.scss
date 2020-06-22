@@ -9,10 +9,51 @@
 
 .Side-bar {
   width: 300px;
-  background-color: #253141;
+  &__user-name {
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+  }
+  &__top-items {
+    width: 260px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    &--name {
+    }
+    &--icon {
+      display: flex;
+      a {
+        color: #fff;
+      }
+    }
+    &--edit {
+      margin-right: 5px;
+    }
+  }
+  &__group-list {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+  }
 }
 
 .Chat-main {
-  width: calc(100% - 300px);
-  background-color: #fff;
+  width: calc(100vw - 300px);
+  &__group-info {
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+  }
+  &__massage-list {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
+  &__massage-form {
+    height: 90px;
+    background-color: #d2d2d2;
+  }
 }

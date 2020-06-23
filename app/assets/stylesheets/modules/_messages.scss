@@ -10,6 +10,7 @@
 .Side-bar {
   width: 300px;
   &__user-name {
+    padding: 0 20px;
     height: 100px;
     background-color: #253141;
     display: flex;
@@ -17,6 +18,7 @@
     justify-content: center;
     color: #fff;
     font-size: 16px;
+    font-weight: bold;
   }
   &__top-items {
     width: 260px;
@@ -36,8 +38,23 @@
     }
   }
   &__group-list {
+    padding: 0 20px;
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    .Group{
+      padding: 20px 0 40px 0;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      &__name {
+        font-size: 15px;
+      }
+      &__message {
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
   }
 }
 

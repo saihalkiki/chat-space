@@ -2,7 +2,7 @@
   .Side-bar__user-name
     .Side-bar__top-items
       .Side-bar__top-items--name
-        masa
+        = current_user.name
       .Side-bar__top-items--icon
         = link_to "#", class: "Side-bar__top-items--edit" do
           = icon('far', 'edit')

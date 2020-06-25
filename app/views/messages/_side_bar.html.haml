@@ -4,14 +4,15 @@
       .Side-bar__top-items--name
         = current_user.name
       .Side-bar__top-items--icon
-        = link_to "#", class: "Side-bar__top-items--edit" do
+        = link_to new_group_path, class: "Side-bar__top-items--edit" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "Side-bar__top-items--cog" do
           = icon('fas', 'cog')
   .Side-bar__group-list
-    .Group
-      = link_to '#' do
-        .Group__name
-          tachcamp
-        .Group__message
-          まだメッセージがありません
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            まだメッセージがありません

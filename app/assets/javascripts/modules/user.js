@@ -1,6 +1,6 @@
 $(function() {
   let chatMemberAddList = $("#UserSearchResult");
-  let chatMemberRemoveList = $(".ChatMembers")
+  let chatMemberRemoveList = $(".ChatMembers");
   function addUser(user) {
     let html = 
     `<div class="ChatMember clearfix">
@@ -23,7 +23,7 @@ $(function() {
         <input name="group[user_ids][]" type="hidden" value="${id}" />
         <div class="ChatMember__remove ChatMember__button">削除</div>
       </div>`
-    chatMemberRemoveList.append(html);
+    $(".ChatMembers").append(html);
   }
   $('#UserSearch__field').on("keyup", function () {
     let input = $('#UserSearch__field').val();
@@ -51,16 +51,18 @@ $(function() {
     .fail(function () {
       alert("通信エラーです。ユーザーが表示できません。");
     });
+  })
     // 追加ボタンが押された時にイベントが発火
     chatMemberAddList.on("click", ".ChatMember__add", function () {
-      console.log(this);
       const userName = $(this).attr("data-user-name");
       const userId = $(this).attr("data-user-id");
       $(this).parent().remove();
       addMember(userName, userId);
-    })
-    chatMemberRemoveList.on("click", ".ChatMember__remove", function () {
+    });
+
+    $(".ChatMembers").on("click", ".ChatMember__remove", function () {
+      console.log("発火");
+      console.log(this);
       $(this).parent().remove();
     });
-  })
 })

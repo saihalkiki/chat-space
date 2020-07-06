@@ -23,7 +23,7 @@ $(function() {
         <input name="group[user_ids][]" type="hidden" value="${id}" />
         <div class="ChatMember__remove ChatMember__button">削除</div>
       </div>`
-    $(".ChatMembers").append(html);
+    chatMemberRemoveList.append(html);
   }
   $('#UserSearch__field').on("keyup", function () {
     let input = $('#UserSearch__field').val();
@@ -60,8 +60,7 @@ $(function() {
       addMember(userName, userId);
     });
 
-    $(".ChatMembers").on("click", ".ChatMember__remove", function () {
-      console.log("発火");
+    chatMemberRemoveList.on("click", ".ChatMember__remove", function () {
       console.log(this);
       $(this).parent().remove();
     });
